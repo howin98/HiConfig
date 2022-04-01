@@ -11,6 +11,12 @@ set cursorline
 set autochdir
 set number
 set hidden
+set list
+set listchars=tab:\|\ ,space:⋅,eol:↴
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=99
 
 let mapleader=" "
 map <leader> <nop>
@@ -25,12 +31,15 @@ noremap <silent><M-Left>  <cmd>lua require("tmux").resize_left()  <cr>
 noremap <silent><M-Down>  <cmd>lua require("tmux").resize_bottom()<cr>
 noremap <silent><M-Up>    <cmd>lua require("tmux").resize_top()   <cr>
 noremap <silent><M-Right> <cmd>lua require("tmux").resize_right() <cr>
+noremap <silent><M-0> <cmd>BufferLinePick<cr>
 
 noremap <silent><M-[> <cmd>BufferLineCyclePrev<cr>
 noremap <silent><M-]> <cmd>BufferLineCycleNext<cr>
-noremap <silent><M-/> <cmd>BufferLinePick<cr>
 
-noremap <silent><M-;> <cmd>NvimTreeToggle<cr><cmd>NvimTreeRefresh<cr>
+noremap <silent><M-/> <cmd>Telescope live_grep <cr>
+noremap <silent><M-?> <cmd>Telescope find_files<cr>
+
+noremap <silent><M-f> <cmd>NvimTreeToggle<cr><cmd>NvimTreeRefresh<cr>
 
 map s <nop>
 noremap <silent>sh <cmd>set nosplitright<cr><cmd>vnew<cr>

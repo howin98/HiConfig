@@ -3,8 +3,8 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- preload management
-	use 'lewis6991/impatient.nvim'
-	use 'nathom/filetype.nvim'
+	-- use 'lewis6991/impatient.nvim'
+	-- use 'nathom/filetype.nvim'
 	use 'dstein64/vim-startuptime'
 
 	-- syntax enhancement
@@ -28,6 +28,7 @@ return require('packer').startup(function()
 
 	-- basic editor enhancement
 	use {'edluffy/specs.nvim', opt = true, event = 'CursorMoved'}
+	use 'aserowy/tmux.nvim'
 	use 'mg979/vim-visual-multi'
 	use 'rmagatti/auto-session'
 	use 'jiangmiao/auto-pairs'
@@ -44,7 +45,12 @@ return require('packer').startup(function()
 
 	-- panes enhancement
 	use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
-	use { 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
+	use { 'nvim-telescope/telescope.nvim', 
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-lua/popup.nvim'
+		} 
+	}
 	use 'simrat39/symbols-outline.nvim'
 
 	-- language server enhancement
@@ -54,5 +60,4 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
-	use 'aserowy/tmux.nvim'
 end)
