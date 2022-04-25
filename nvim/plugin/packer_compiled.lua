@@ -69,21 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["accelerated-jk"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/accelerated-jk",
-    url = "https://github.com/rhysd/accelerated-jk"
-  },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
-  ["auto-session"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/auto-session",
-    url = "https://github.com/rmagatti/auto-session"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -109,25 +94,20 @@ _G.packer_plugins = {
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["diffview.nvim"] = {
+  colorizer = {
     loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/colorizer",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["filetype.nvim"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/filetype.nvim",
     url = "https://github.com/nathom/filetype.nvim"
   },
-  ["gitsigns.nvim"] = {
+  gitsigns = {
     loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/gitsigns",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["hop.nvim"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/hop.nvim",
-    url = "https://github.com/phaazon/hop.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -149,30 +129,52 @@ _G.packer_plugins = {
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  neoscroll = {
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/neoscroll",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
+  nerdcommenter = {
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
+  },
   nvim = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim",
     url = "https://github.com/catppuccin/nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-comment"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
-  },
   ["nvim-gps"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-gps",
     url = "https://github.com/SmiteshP/nvim-gps"
   },
+  ["nvim-lastplace"] = {
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-lastplace",
+    url = "https://github.com/ethanholz/nvim-lastplace"
+  },
   ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\n‹\4\0\0\b\0\22\0O6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\5\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\6\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\a\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\b\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\t\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\1\3\0005\3\17\0005\4\14\0009\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\15\0049\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\16\4=\4\f\0039\4\v\0009\4\18\0044\6\4\0005\a\19\0>\a\1\0065\a\20\0>\a\2\0065\a\21\0>\a\3\6B\4\2\2=\4\18\3B\1\2\1K\0\1\0\1\0\1\tname\fcopilot\1\0\1\tname\vbuffer\1\0\1\tname\rnvim_lsp\fsources\1\0\0\18documentation\15completion\1\0\0\rbordered\vwindow\vconfig\bcmp\ngopls\ncmake\vclangd\fpyright\rtsserver\16sumneko_lua\nsetup\18rust_analyzer\14lspconfig\frequire\0" },
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    config = { "\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\vnotify\19load_extension\14telescope\frequire\0" },
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -188,26 +190,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
-  },
-  ["nvim-treesitter-textobjects"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
-  },
-  ["nvim-ts-autotag"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
-    url = "https://github.com/windwp/nvim-ts-autotag"
-  },
-  ["nvim-ts-context-commentstring"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
-    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-  },
-  ["nvim-ts-hint-textobject"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-ts-hint-textobject",
-    url = "https://github.com/mfussenegger/nvim-ts-hint-textobject"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
@@ -229,62 +211,40 @@ _G.packer_plugins = {
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["popup.nvim"] = {
+  specs = {
     loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/popup.nvim",
-    url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["specs.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/opt/specs.nvim",
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/specs",
     url = "https://github.com/edluffy/specs.nvim"
+  },
+  ["startuptime.vim"] = {
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/startuptime.vim",
+    url = "https://github.com/tweekmonster/startuptime.vim"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
     url = "https://github.com/simrat39/symbols-outline.nvim"
   },
-  ["tabout.nvim"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/tabout.nvim",
-    url = "https://github.com/abecodes/tabout.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tmux.nvim"] = {
+  ["vim-autoformat"] = {
     loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/tmux.nvim",
-    url = "https://github.com/aserowy/tmux.nvim"
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-autoformat",
+    url = "https://github.com/Chiel92/vim-autoformat"
   },
   ["vim-cool"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-cool",
     url = "https://github.com/romainl/vim-cool"
   },
-  ["vim-cursorword"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-cursorword",
-    url = "https://github.com/itchyny/vim-cursorword"
-  },
   ["vim-eft"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-eft",
     url = "https://github.com/hrsh7th/vim-eft"
-  },
-  ["vim-matchup"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-matchup",
-    url = "https://github.com/andymass/vim-matchup"
-  },
-  ["vim-startuptime"] = {
-    loaded = true,
-    path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-startuptime",
-    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-visual-multi"] = {
     loaded = true,
@@ -294,13 +254,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'specs.nvim'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: nvim-notify
+time([[Config for nvim-notify]], true)
+try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\vnotify\19load_extension\14telescope\frequire\0", "config", "nvim-notify")
+time([[Config for nvim-notify]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n‹\4\0\0\b\0\22\0O6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\5\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\6\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\a\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\b\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\t\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\1\3\0005\3\17\0005\4\14\0009\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\15\0049\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\16\4=\4\f\0039\4\v\0009\4\18\0044\6\4\0005\a\19\0>\a\1\0065\a\20\0>\a\2\0065\a\21\0>\a\3\6B\4\2\2=\4\18\3B\1\2\1K\0\1\0\1\0\1\tname\fcopilot\1\0\1\tname\vbuffer\1\0\1\tname\rnvim_lsp\fsources\1\0\0\18documentation\15completion\1\0\0\rbordered\vwindow\vconfig\bcmp\ngopls\ncmake\vclangd\fpyright\rtsserver\16sumneko_lua\nsetup\18rust_analyzer\14lspconfig\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 if should_profile then save_profiles() end
 
 end)
