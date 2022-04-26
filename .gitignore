@@ -1,0 +1,4 @@
+zshrc-private
+nvim/plugin
+.vscode
+nvim/.vscode/**

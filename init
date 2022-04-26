@@ -1,0 +1,10 @@
+#/bin/bash 
+
+PROJECT_DIR=$(cd `dirname $0`; pwd)
+
+touch $PROJECT_DIR/zshrc-private
+ln -sf $PROJECT_DIR/zshrc $HOME/.zshrc
+
+ln -sf $PROJECT_DIR/nvim	$HOME/.config
+
+ln -sf $PROJECT_DIR/tmux.conf $HOME/.tmux.conf
