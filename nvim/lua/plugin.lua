@@ -84,6 +84,20 @@ local plugin = {
 		end
 	},
 
+	{ 'christoomey/vim-tmux-navigator',
+		hook = function()
+			vim.cmd'let g:tmux_navigator_no_mappings = 1'
+			vim.cmd'map <M-h> <C-w>h'
+			vim.cmd'map <M-j> <C-w>j'
+			vim.cmd'map <M-k> <C-w>k'
+			vim.cmd'map <M-l> <C-w>l'
+
+			map('n|<M-h>', 'TmuxNavigateLeft')
+			map('n|<M-j>', 'TmuxNavigateDown')
+			map('n|<M-k>', 'TmuxNavigateUp')
+			map('n|<M-l>', 'TmuxNavigateRight')
+		end
+	},
 
 	{
 		'mg979/vim-visual-multi',

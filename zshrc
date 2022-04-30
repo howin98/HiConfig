@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git vi-mode extract zsh-autosuggestions)
+plugins=(git vi-mode extract zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -29,3 +29,4 @@ set_proxy
 #export PROJECT_PATH=$(dirname $(ls -ld .zshrc | awk '{print $NF}'))
 #source $PROJECT_PATH/zshrc-private
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+alias sho="ssh.exe oneflow21 tmux a || tmux"

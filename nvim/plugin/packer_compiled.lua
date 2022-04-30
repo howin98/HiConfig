@@ -165,7 +165,6 @@ _G.packer_plugins = {
     url = "https://github.com/ethanholz/nvim-lastplace"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\n‹\4\0\0\b\0\22\0O6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\5\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\6\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\a\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\b\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\t\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\1\3\0005\3\17\0005\4\14\0009\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\15\0049\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\16\4=\4\f\0039\4\v\0009\4\18\0044\6\4\0005\a\19\0>\a\1\0065\a\20\0>\a\2\0065\a\21\0>\a\3\6B\4\2\2=\4\18\3B\1\2\1K\0\1\0\1\0\1\tname\fcopilot\1\0\1\tname\vbuffer\1\0\1\tname\rnvim_lsp\fsources\1\0\0\18documentation\15completion\1\0\0\rbordered\vwindow\vconfig\bcmp\ngopls\ncmake\vclangd\fpyright\rtsserver\16sumneko_lua\nsetup\18rust_analyzer\14lspconfig\frequire\0" },
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
@@ -246,6 +245,11 @@ _G.packer_plugins = {
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-eft",
     url = "https://github.com/hrsh7th/vim-eft"
   },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/howin/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
@@ -258,10 +262,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-notify]], true)
 try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\vnotify\19load_extension\14telescope\frequire\0", "config", "nvim-notify")
 time([[Config for nvim-notify]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n‹\4\0\0\b\0\22\0O6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\5\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\6\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\a\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\b\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\t\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\1\3\0005\3\17\0005\4\14\0009\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\15\0049\5\v\0009\5\f\0059\5\r\5B\5\1\2=\5\16\4=\4\f\0039\4\v\0009\4\18\0044\6\4\0005\a\19\0>\a\1\0065\a\20\0>\a\2\0065\a\21\0>\a\3\6B\4\2\2=\4\18\3B\1\2\1K\0\1\0\1\0\1\tname\fcopilot\1\0\1\tname\vbuffer\1\0\1\tname\rnvim_lsp\fsources\1\0\0\18documentation\15completion\1\0\0\rbordered\vwindow\vconfig\bcmp\ngopls\ncmake\vclangd\fpyright\rtsserver\16sumneko_lua\nsetup\18rust_analyzer\14lspconfig\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
 if should_profile then save_profiles() end
 
 end)
