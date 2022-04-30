@@ -8,83 +8,100 @@ local plugin = {
 	{ 'wbthomason/packer.nvim' },
 	{ 'tweekmonster/startuptime.vim' },
 
-	{
-		'catppuccin/nvim',
-		hook = function() vim.cmd [[colorscheme catppuccin]] end
-	},
-
-	{
-		'nvim-treesitter/nvim-treesitter',
-		requires = {
-			'romgrk/nvim-treesitter-context',
-			'p00f/nvim-ts-rainbow',
-			'lukas-reineke/indent-blankline.nvim',
+	-- {
+		--	'catppuccin/nvim',
+		--	hook = function() vim.cmd [[colorscheme catppuccin]] end
+		-- },
+		--
+		{
+			'rakr/vim-one',
+			hook = function()
+				vim.cmd[[colorscheme one]]
+				vim.cmd[[set background=light]]
+				vim.cmd[[let g:one_allow_italics = 1]]
+			end
 		},
-		hook = function()
-			require 'nvim-treesitter.configs'.setup {
-				ensure_installed = 'all',
-				ignore_install = { 'phpdoc' },
-				sync_install = false,
 
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false
-				},
-				incremental_selection = { enable = true },
-				rainbow = { enable = true }
-			}
-			require 'treesitter-context'.setup {}
-			vim.opt.list = true
-			vim.opt.listchars:append("space:⋅")
-			vim.opt.listchars:append("eol:↴")
-			require 'indent_blankline'.setup {
-				space_char_blankline = ' ',
-				show_current_context = true,
-				show_current_context_start = true,
-			}
-		end
-	},
+		{
+			'nvim-treesitter/nvim-treesitter',
+			requires = {
+				'romgrk/nvim-treesitter-context',
+				'p00f/nvim-ts-rainbow',
+				'lukas-reineke/indent-blankline.nvim',
+			},
+			hook = function()
+				require 'nvim-treesitter.configs'.setup {
+					ensure_installed = 'all',
+					ignore_install = { 'phpdoc' },
+					sync_install = false,
 
-	{
-		'akinsho/bufferline.nvim',
-		requires = 'kyazdani42/nvim-web-devicons',
-		hook = function()
-			map('n|<M-p>', 'BufferLinePick')
-			require 'bufferline'.setup {}
-		end
-	},
-
-	{
-		'nvim-lualine/lualine.nvim',
-		requires = {
-			'kyazdani42/nvim-web-devicons',
-			'arkav/lualine-lsp-progress',
-			'SmiteshP/nvim-gps',
-		},
-		hook = function()
-			local gps = require 'nvim-gps'
-			require 'nvim-gps'.setup {}
-			require 'lualine'.setup {
-				sections = {
-					lualine_a = { 'mode' },
-					lualine_b = { 'branch' },
-					lualine_c = { { gps.get_location, cond = gps.is_available } },
-					lualine_x = { 'lsp_progress', 'fileformat', 'filetype' },
-					lualine_y = { 'diff', 'diagnostics' },
-					lualine_z = { 'progress', 'location' },
-				},
-				options = {
-					theme = 'catppuccin',
-					section_separators = '',
-					component_separators = '',
-					disabled_filetypes = {},
-					globalstatus = true,
+					highlight = {
+						enable = true,
+						additional_vim_regex_highlighting = false
+					},
+					incremental_selection = {
+						enable = true ,
+						keymaps = {
+							init_selection = "<Enter>",
+							node_incremental = "<Enter>",
+							node_decremental = "<Backspace>",
+						},
+					},
+					rainbow = { enable = true }
 				}
-			}
-		end
-	},
+				require 'treesitter-context'.setup {}
+				vim.opt.list = true
+				vim.opt.listchars:append("space:⋅")
+				vim.opt.listchars:append("eol:↴")
+				require 'indent_blankline'.setup {
+					space_char_blankline = ' ',
+					show_current_context = true,
+					show_current_context_start = true,
+				}
+			end
+		},
 
-	{ 'christoomey/vim-tmux-navigator',
+		{
+			'akinsho/bufferline.nvim',
+			requires = 'kyazdani42/nvim-web-devicons',
+			hook = function()
+				map('n|<M-p>', 'BufferLinePick')
+				require 'bufferline'.setup {}
+			end
+		},
+
+		{
+			'nvim-lualine/lualine.nvim',
+			requires = {
+				'kyazdani42/nvim-web-devicons',
+				'arkav/lualine-lsp-progress',
+				'SmiteshP/nvim-gps',
+			},
+			hook = function()
+				local gps = require 'nvim-gps'
+				require 'nvim-gps'.setup {}
+				require 'lualine'.setup {
+					sections = {
+						lualine_a = { 'mode' },
+						lualine_b = { 'branch' },
+						lualine_c = { { gps.get_location, cond = gps.is_available } },
+						lualine_x = { 'lsp_progress', 'fileformat', 'filetype' },
+						lualine_y = { 'diff', 'diagnostics' },
+						lualine_z = { 'progress', 'location' },
+					},
+					options = {
+						-- theme = 'catppuccin',
+						theme = 'onelight',
+						section_separators = '',
+						component_separators = '',
+						disabled_filetypes = {},
+						globalstatus = true,
+					}
+				}
+			end
+		},
+
+		{ 'christoomey/vim-tmux-navigator',
 		hook = function()
 			vim.cmd'let g:tmux_navigator_no_mappings = 1'
 			vim.cmd'map <M-h> <C-w>h'
@@ -140,23 +157,21 @@ local plugin = {
 					{ name = 'copilot' }
 				},
 				mapping = {
-					["<Tab>"] = cmp.mapping(function(fallback)
+					["<Tab>"] = function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif has_words_before() then
-							cmp.complete()
 						else
 							fallback()
 						end
-					end, { "i", "s" }),
+					end,
 
-					["<S-Tab>"] = cmp.mapping(function(fallback)
+					["<S-Tab>"] = function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
 						else
 							fallback()
 						end
-					end, { "i", "s" }),
+					end,
 				},
 			}
 		end
@@ -189,15 +204,16 @@ local plugin = {
 
 	{ 'windwp/nvim-autopairs', as = 'nvim-autopairs' },
 	{ 'norcalli/nvim-colorizer.lua', as = 'colorizer' },
-	{ 'lewis6991/gitsigns.nvim', as = 'gitsigns' },
 	{ 'edluffy/specs.nvim', as = 'specs' },
 	{ 'karb94/neoscroll.nvim', as = 'neoscroll' },
+	'tpope/vim-commentary',
 	{
-		'preservim/nerdcommenter',
+		'lewis6991/gitsigns.nvim',
 		hook = function()
+			require'gitsigns'.setup{
+				current_line_blame = true,
+			}
 		end
-		--[[ require'Comment'.setup{ ]]
-
 	},
 
 	{
@@ -207,6 +223,7 @@ local plugin = {
 			'simrat39/symbols-outline.nvim',
 			'kyazdani42/nvim-tree.lua',
 		},
+
 		hook = function()
 			require 'telescope'.setup {}
 			require 'nvim-tree'.setup {}
@@ -215,9 +232,11 @@ local plugin = {
 			map('n|<M-?>', 'Telescope keymaps')
 			map('n|<M-e>', 'Telescope find_files')
 			map('n|<M-@>', 'Telescope lsp_dynamic_workspace_symbols')
-			map('n|<M-#>', 'SymbolsOutline')
-			map('n|<M-$>', 'NvimTreeToggle')
+			map('n|<M-s>', 'SymbolsOutline')
+			map('n|<M-t>', 'NvimTreeToggle')
 
+			map('n|gi', 'Telescope lsp_implementations')
+			map('n|gt', 'Telescope lsp_type_definitions')
 			map('n|gd', 'Telescope lsp_definitions')
 			map('n|gr', 'Telescope lsp_references')
 			map('n|ga', 'Telescope lsp_code_actions')
@@ -227,10 +246,16 @@ local plugin = {
 		end
 	},
 
-
 	'romainl/vim-cool',
 
-
+	{ 'abecodes/tabout.nvim', as = 'tabout'},
+	{
+		'phaazon/hop.nvim',
+		hook = function()
+			require'hop'.setup{}
+			map('n|?', 'HopWord')
+		end
+	},
 
 	{
 		'rcarriga/nvim-notify',
@@ -263,7 +288,7 @@ function plugin.load()
 			function(use)
 				for _, elem in ipairs(plugin) do
 					use(elem)
-					_ = elem.hook and elem.hook()
+					_ = elem.hook and pcall(elem.hook)
 					if elem.as then
 						local status, obj = pcall(require, elem.as)
 						_ = status and obj.setup {}

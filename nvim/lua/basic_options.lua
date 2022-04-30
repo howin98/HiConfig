@@ -9,6 +9,14 @@ function basic_options.init_map()
 
 	vim.cmd'xmap > >gv'
 	vim.cmd'xmap < <gv'
+	vim.cmd'nmap > >>'
+	vim.cmd'nmap < <<'
+
+	vim.cmd'nmap > >>'
+	vim.cmd'nmap < <<'
+
+	vim.cmd'nmap - <C-b>'
+	vim.cmd'nmap = <C-f>'
 end
 
 function basic_options.init_cmd()
