@@ -104,9 +104,9 @@ _G.packer_plugins = {
     path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/filetype.nvim",
     url = "https://github.com/nathom/filetype.nvim"
   },
-  gitsigns = {
+  ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/gitsigns",
+    path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["hop.nvim"] = {
@@ -259,6 +259,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vim-translator"] = {
+    loaded = true,
+    path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/vim-translator",
+    url = "https://github.com/voldikss/vim-translator"
   },
   ["vim-visual-multi"] = {
     loaded = true,

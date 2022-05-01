@@ -201,6 +201,12 @@ local plugin = {
 	},
 
 	'Chiel92/vim-autoformat',
+	{
+		'voldikss/vim-translator',
+		hook = function()
+			map('n|<M-t>', 'TranslateW', [[lua require("notify")("searching...")]])
+		end
+	},
 
 	{ 'windwp/nvim-autopairs', as = 'nvim-autopairs' },
 	{ 'norcalli/nvim-colorizer.lua', as = 'colorizer' },
@@ -233,7 +239,7 @@ local plugin = {
 			map('n|<M-e>', 'Telescope find_files')
 			map('n|<M-@>', 'Telescope lsp_dynamic_workspace_symbols')
 			map('n|<M-s>', 'SymbolsOutline')
-			map('n|<M-t>', 'NvimTreeToggle')
+			map('n|<M-f>', 'NvimTreeToggle')
 
 			map('n|gi', 'Telescope lsp_implementations')
 			map('n|gt', 'Telescope lsp_type_definitions')
@@ -249,6 +255,7 @@ local plugin = {
 	'romainl/vim-cool',
 
 	{ 'abecodes/tabout.nvim', as = 'tabout'},
+
 	{
 		'phaazon/hop.nvim',
 		hook = function()
