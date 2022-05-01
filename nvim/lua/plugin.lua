@@ -116,10 +116,7 @@ local plugin = {
 		end
 	},
 
-	{
 		'mg979/vim-visual-multi',
-		hook = function() vim.cmd [[let g:VM_theme = "iceblue"]] end
-	},
 
 	{ 'ethanholz/nvim-lastplace', as = 'nvim-lastplace' },
 
@@ -232,7 +229,11 @@ local plugin = {
 
 		hook = function()
 			require 'telescope'.setup {}
-			require 'nvim-tree'.setup {}
+			require 'nvim-tree'.setup {
+				view = {
+					width = 42,
+				}
+			}
 			map('n|<M-/>', 'Telescope live_grep')
 			map('n|<M-:>', 'Telescope commands')
 			map('n|<M-?>', 'Telescope keymaps')
@@ -253,6 +254,7 @@ local plugin = {
 	},
 
 	'romainl/vim-cool',
+	'RRethy/vim-illuminate',
 
 	{ 'abecodes/tabout.nvim', as = 'tabout'},
 

@@ -35,6 +35,7 @@ function basic_options.init_cmd()
 	set('fdl', 99)
 	set('fde', 'nvim_treesitter#foldexpr()')
 	set('hid', true)
+	vim.cmd[[set clipboard+=unnamedplus]]
 end
 
 

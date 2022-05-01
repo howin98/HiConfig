@@ -250,6 +250,11 @@ _G.packer_plugins = {
     path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/vim-eft",
     url = "https://github.com/hrsh7th/vim-eft"
   },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
+  },
   ["vim-one"] = {
     loaded = true,
     path = "/home/yuhao/.local/share/nvim/site/pack/packer/start/vim-one",
